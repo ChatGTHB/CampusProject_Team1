@@ -1,6 +1,5 @@
 Feature: Teacher Login Functionality
 
-
   Scenario: Teacher Login Functionality
 
     Given Navigate to Campus
