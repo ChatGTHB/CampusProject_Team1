@@ -27,9 +27,9 @@ public class Parent {
         element.click();
     }
 
-    public void verifyContainsTextFunction(WebElement element, String value){
+    public void verifyContainsTextFunction(WebElement element, String value) {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
-        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()),"bo such TEXT");
+        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()), "No such text");
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform();
     }
     public void scrollToElement(WebElement element){

@@ -9,20 +9,14 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
     @After
-    public void after(Scenario senaryo){
-        System.out.println("Senaryo bitti");
+    public void after(Scenario scenerio) {
+        System.out.println("The scenerio has finished");
 
-        ExcelUtility.writeExcel("src/test/java/ApachePOI/resource/ScenarioStatus.xlsx",
-                senaryo, GWD.threadBrowserGet());
-
-        if (senaryo.isFailed()){
-
-            TakesScreenshot ts=(TakesScreenshot) GWD.getDriver();
-           final byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
-            senaryo.attach(hafizadakiHali, "image/png","screenshot name");
+        if (scenerio.isFailed()) {
+            TakesScreenshot ts = (TakesScreenshot) GWD.getDriver();
+            byte[] hafizadakiHali = ts.getScreenshotAs(OutputType.BYTES);
+            scenerio.attach(hafizadakiHali, "image/png", "screen shot");
         }
-
         GWD.quitDriver();
-
     }
 }
