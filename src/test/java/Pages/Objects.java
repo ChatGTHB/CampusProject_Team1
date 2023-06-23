@@ -16,6 +16,15 @@ public class Objects extends Parent {
    // @FindBy(xpath="//ms-add-button[contains(@tooltip,'ADD')]//button")
    // public WebElement addButton;
 
+    @FindBy(css = "input[formcontrolname='username']")
+    public WebElement username;
+    @FindBy(css = "input[formcontrolname='password']")
+    public WebElement password;
+    @FindBy(css = "span[class='logo-text ng-star-inserted']")
+    public WebElement textTechnoStudy;
+    @FindBy(css = "button[aria-label='LOGIN']")
+    public WebElement loginButton;
+
 
 
 
@@ -27,6 +36,12 @@ public class Objects extends Parent {
         switch (strButton)
         {
             //case "addButton" : return addButton;
+            case "username":
+                return username;
+            case "password":
+                return password;
+            case "textTechnoStudy":
+                return textTechnoStudy;
         }
         return null;
     }
